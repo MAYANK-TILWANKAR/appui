@@ -134,85 +134,82 @@ const Dashboard = () => {
     if (!isOpen) return null;
 
     return (
-      <div className="fixed h-screen  inset-0 flex items-center justify-center z-50">
-        <div className="bg-black bg-opacity-50 absolute inset-0"></div>
-        <div className="bg-white w-full max-w-md mx-auto rounded-lg shadow-xl overflow-hidden relative">
-          <div className="flex justify-between items-center p-4 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-800">
-              Tell us about your work!
+      <div className="fixed inset-0 bg-white z-50 overflow-y-auto">
+        <div className="max-w-md mx-auto p-4 sm:p-6 md:p-8">
+          <div className="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
+            <h2 className="text-2xl font-bold text-gray-800">
+              Tell us about your work
             </h2>
             <button
               onClick={onClose}
-              className="text-2xl text-gray-600 hover:text-gray-800 transition-colors">
+              className="text-3xl text-gray-600 hover:text-gray-800 transition-colors">
               &times;
             </button>
           </div>
-          <div className="max-h-[70vh] overflow-y-auto p-4 sm:p-6">
-            <div className="space-y-6">
-              <div>
-                <p className="mb-3 text-sm font-medium text-gray-700">
-                  Do you have any experience in {work} services?
-                </p>
-                <div className="space-y-2">
-                  {["Yes", "No"].map((option) => (
-                    <div
-                      key={option}
-                      className="flex items-center justify-between border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                      <label
-                        className="py-3 px-4 text-black text-left flex-grow cursor-pointer"
-                        htmlFor={`experience-${option.toLowerCase()}`}>
-                        {option}
-                      </label>
-                      <input
-                        id={`experience-${option.toLowerCase()}`}
-                        type="radio"
-                        name="experience"
-                        value={option.toLowerCase()}
-                        className="form-radio h-5 w-5 text-blue-600 cursor-pointer mr-4"
-                        onChange={() => setHasExperience(option === "Yes")}
-                        checked={hasExperience === (option === "Yes")}
-                      />
-                    </div>
-                  ))}
-                </div>
+          <div className="space-y-8">
+            <div>
+              <p className="mb-4 text-sm font-medium text-gray-700">
+                Do you have any experience in {work} services?
+              </p>
+              <div className="space-y-3">
+                {["Yes", "No"].map((option) => (
+                  <div
+                    key={option}
+                    className="flex items-center justify-between border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <label
+                      className="py-3 px-4 text-black text-left flex-grow cursor-pointer"
+                      htmlFor={`experience-${option.toLowerCase()}`}>
+                      {option}
+                    </label>
+                    <input
+                      id={`experience-${option.toLowerCase()}`}
+                      type="radio"
+                      name="experience"
+                      value={option.toLowerCase()}
+                      className="form-radio h-5 w-5 text-blue-600 cursor-pointer mr-4"
+                      onChange={() => setHasExperience(option === "Yes")}
+                      checked={hasExperience === (option === "Yes")}
+                    />
+                  </div>
+                ))}
               </div>
-              <div>
-                <p className="mb-3 text-sm font-medium text-gray-700">
-                  What is your age?
-                </p>
-                <div className="space-y-2">
-                  {[
-                    "Less than 18 years",
-                    "18-45 years",
-                    "More than 45 years",
-                  ].map((age) => (
-                    <div
-                      key={age}
-                      className="flex items-center justify-between border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                      <label
-                        className="py-3 px-4 text-black text-left flex-grow cursor-pointer"
-                        htmlFor={`age-${age}`}>
-                        {age}
-                      </label>
-                      <input
-                        id={`age-${age}`}
-                        type="radio"
-                        name="age"
-                        value={age}
-                        className="form-radio h-5 w-5 text-blue-600 cursor-pointer mr-4"
-                        onChange={() => setAgeGroup(age)}
-                        checked={ageGroup === age}
-                      />
-                    </div>
-                  ))}
-                </div>
+            </div>
+            <div>
+              <p className="mb-4 text-sm font-medium text-gray-700">
+                What is your age?
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Less than 18 years",
+                  "18-45 years",
+                  "More than 45 years",
+                ].map((age) => (
+                  <div
+                    key={age}
+                    className="flex items-center justify-between border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                    <label
+                      className="py-3 px-4 text-black text-left flex-grow cursor-pointer"
+                      htmlFor={`age-${age}`}>
+                      {age}
+                    </label>
+                    <input
+                      id={`age-${age}`}
+                      type="radio"
+                      name="age"
+                      value={age}
+                      className="form-radio h-5 w-5 text-blue-600 cursor-pointer mr-4"
+                      onChange={() => setAgeGroup(age)}
+                      checked={ageGroup === age}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-          <div className="p-4 sm:p-6 border-t border-gray-200">
+          <div className="mt-8 pt-6 border-t border-gray-200">
             <button
               onClick={onClose}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 w-full">
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 w-full">
               Continue
             </button>
           </div>
