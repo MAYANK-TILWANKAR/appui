@@ -232,7 +232,7 @@ const Dashboard = () => {
             <label
               htmlFor="name"
               className="block mb-2 text-sm font-medium text-gray-700 mx-4">
-              What's your name?
+              What&apos;s your name?
             </label>
             <input
               type="text"
@@ -284,7 +284,7 @@ const Dashboard = () => {
               />
             </div>
             <label htmlFor="agreeTerms" className="ml-2 text-sm text-gray-600">
-              By proceeding, you agree to company's{" "}
+              By proceeding, you agree to company&apos;s{" "}
               <span className="font-semibold text-blue-600 hover:underline cursor-pointer">
                 Terms & Conditions
               </span>{" "}

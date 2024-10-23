@@ -204,12 +204,12 @@ const Index = () => {
           <div>
             {otpSent ? (
               <div>
-                <a
+                <Link
                   href="/dashboard"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-full transition duration-300 ease-in-out flex items-center justify-center text-lg">
                   <FaLock className="mr-2" />
                   Verify OTP
-                </a>
+                </Link>
               </div>
             ) : (
               <button
